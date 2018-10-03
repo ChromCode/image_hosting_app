@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
   <ul>
@@ -9,10 +10,11 @@
 
   <p>Uploaded files:</p>
   <ul>
-    {% for obj in user_images %}
+    {% for obj in images %}
       <li>
-        <a href="{{ obj.image }}">{{ obj.image.name }}</a>
+        <img src="{{ obj.image.url }}" alt="{{ obj.image.name }}">
         <small>(Uploaded at: {{ obj.uploaded_at }})</small>
+        <small>(Image Width: {{obj.image.width}}, Image Height: {{obj.image.height}})
       </li>
     {% endfor %}
   </ul>
