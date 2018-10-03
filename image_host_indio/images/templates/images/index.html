@@ -12,9 +12,9 @@
   <ul>
     {% for obj in images %}
       <li>
-        <img src="{{ obj.image.url }}" alt="{{ obj.image.name }}">
-        <small>(Uploaded at: {{ obj.uploaded_at }})</small>
-        <small>(Image Width: {{obj.image.width}}, Image Height: {{obj.image.height}})
+        <img src="{{ obj.image.url }}" alt="{{ obj.image.name }}" height="50%", width="50%">
+        <small><a>(Uploaded at: {{ obj.uploaded_at }})</small></a>
+        <small><a>(Image Width: {{obj.image.width}}, Image Height: {{obj.image.height}})</a>
       </li>
     {% endfor %}
   </ul>

@@ -6,7 +6,7 @@ from images.models import User_Image
 from images.forms import ImageForm
 
 def index(request):
-    images = User_Image.objects.all()
+    images = User_Image.filter(is_public=True).order_vt
     return render(request, 'images/index.html', { 'images': images })
 
 def model_form_upload(request):
