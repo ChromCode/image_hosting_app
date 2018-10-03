@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <ul>
+    <li>
+      <a href="{% url 'model_form_upload' %}">Model Form Upload</a>
+    </li>
+  </ul>
+
+  <p>Uploaded files:</p>
+  <ul>
+    {% for obj in images %}
+      <li>
+        <img src="{{ obj.image.url }}" alt="{{ obj.image.name }}">
+        <small>(Uploaded at: {{ obj.uploaded_at }})</small>
+        <small>(Image Width: {{obj.image.width}}, Image Height: {{obj.image.height}})
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
