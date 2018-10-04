@@ -1,3 +1,7 @@
+# Code obtained and modified from: 
+# https://github.com/sibtc/simple-file-upload
+# Original Author: https://github.com/sibtc
+
 from django import forms
 from images.models import User_Image
 
