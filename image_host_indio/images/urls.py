@@ -10,5 +10,6 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('<int:img_width>/<int:img_height>/', views.specific_image, name=''),
+    path('all', views.all_media_images, name=''),
     url(r'^uploads/form/$', views.model_form_upload, name='model_form_upload'),
 ]

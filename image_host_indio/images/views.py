@@ -58,3 +58,7 @@ def specific_image(request, img_width, img_height):
 
 		return HttpResponse("No image with dimensions found")
 	return render(request, 'images/specific_image.html', {'image': image})
+
+def all_media_images(request):
+	images = User_Image.objects.all().order_by('uploaded_at')
+	return render(request, 'images/index.html', { 'images': images })
