@@ -13,13 +13,17 @@
   </ul>
 
   <p>Uploaded files:</p>
-  <ul>
+  <dl>
     {% for obj in images %}
-      <li>
-        <img src="{{ obj.image.url }}" alt="{{ obj.image.name }}" height="50%", width="50%">
-        <small><a>(Uploaded at: {{ obj.uploaded_at }})</small></a>
-        <small><a>(Image Width: {{obj.image.width}}, Image Height: {{obj.image.height}})</a>
-      </li>
+      <p>
+        <dt>
+          <img src="{{ obj.image.url }}" alt="{{ obj.image.name }}" height="50%", width="50%">
+        </dt>
+        <dd>- Uploaded at: {{ obj.uploaded_at }}</dd>
+        <dd>- Image Height: {{ obj.image_height }} </dd>
+        <dd>- Image Width: {{obj.image_width}} </dd>
+        <dd>- <a href="{{ obj.image.url }}">{{ obj.image.name }}</a></dd>
+      </p>
     {% endfor %}
-  </ul>
+  </dl>
 {% endblock %}

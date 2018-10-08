@@ -6,7 +6,10 @@
 <p>Here is your image:</p>
   {% for obj in image %}
     <img src="{{ obj.image.url }}" alt="{{ obj.image.name }}" height="50%", width="50%">
-    <small><a>(Uploaded at: {{ obj.uploaded_at }})</small></a>
-    <small><a>(Image Width: {{obj.image.width}}, Image Height: {{obj.image.height}})</a>
+    <small><p>
+    	(Uploaded at: {{ obj.uploaded_at }})
+        (Image Width: {{obj.image.width}}, Image Height: {{obj.image.height}})
+    </p>
+    <a href="{{ obj.image.url }}">{{ obj.image.name }}</a>
   {% endfor %}
 {% endblock %}
